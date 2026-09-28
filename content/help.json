@@ -1,118 +1,590 @@
 {
   "groups": [
     {
-      "id": "scores",
-      "title": "成绩查询",
-      "subtitle": "查询白金与 osu! 成绩，记录每次进步。",
-      "symbol": "◎",
+      "id": "getting-started",
+      "title": "开始使用与账号",
+      "subtitle": "帮助入口、账号绑定与模式设置。",
+      "symbol": "✦",
       "commands": [
+        {
+          "command": "/help",
+          "title": "鳕烩烩网站",
+          "description": "获取本网站链接，在网页中查找全部指令。",
+          "example": "/help"
+        },
         {
           "command": "/plhelp",
           "title": "白金帮助",
-          "description": "查看 PLATiNA 插件的完整指令说明。",
+          "description": "查看 PLATiNA 指令的详细用法。",
           "example": "/plhelp"
         },
         {
-          "command": "/plbind <token>",
-          "title": "绑定账号",
-          "description": "使用 PLATiNA token 绑定游戏账号。建议私聊发送；群聊绑定后请手动撤回含 token 的消息。",
-          "example": "/plbind 你的token"
-        },
-        {
-          "command": "/plb50 [模式]",
-          "title": "我的 B50",
-          "description": "查询 B50 成绩。模式可选 4k、4k+、6k、6k+，也可以省略。",
-          "example": "/plb50 4k"
-        },
-        {
           "command": "/osuhelp",
-          "title": "查分帮助",
-          "description": "查看 OSUBot 的绑定方法和完整查分指令。",
+          "title": "osu! 查分帮助",
+          "description": "查看 OSUBot 的完整帮助；也可加主题，如 /osuhelp 成绩。",
           "example": "/osuhelp"
         },
         {
-          "command": "/pr",
-          "title": "最近通过",
-          "description": "查看最近通过的成绩，也支持查询最近通过的成绩列表。",
-          "example": "/pr 1-30"
+          "command": "/omtk [命令名]",
+          "title": "mania 工具箱帮助",
+          "description": "查看工具箱目录；指定命令名可查看详细参数。",
+          "example": "/omtk mapview"
         },
         {
-          "command": "/bp [范围]",
-          "title": "最佳成绩",
-          "description": "查看最佳成绩，可指定 1–100 范围。",
-          "example": "/bp 1-100"
+          "command": "/plbind <token>",
+          "title": "绑定 PLATiNA",
+          "description": "使用 PLATiNA token 绑定白金账号。建议私聊发送；群聊发送后请手动撤回。",
+          "example": "/plbind 你的token"
+        },
+        {
+          "command": "/bind <玩家>",
+          "title": "绑定 osu!",
+          "description": "用用户名、id:UID 或主页链接绑定 osu! 账号。",
+          "example": "/bind peppy"
+        },
+        {
+          "command": "/unbind",
+          "title": "解绑 osu!",
+          "description": "解除当前 QQ 账号的 osu! 绑定。",
+          "example": "/unbind"
+        },
+        {
+          "command": "/mode [模式]",
+          "title": "默认游戏模式",
+          "description": "查看或修改 osu! 默认模式：o/t/c/m 分别对应四种模式。",
+          "example": "/mode m"
+        },
+        {
+          "command": "/sbbind <玩家>",
+          "title": "绑定 ppysb",
+          "description": "绑定 ppysb 私服账号；查询时在指令末尾加 &sb。",
+          "example": "/sbbind 玩家名"
+        },
+        {
+          "command": "/sbunbind",
+          "title": "解绑 ppysb",
+          "description": "解除 ppysb 私服账号绑定。",
+          "example": "/sbunbind"
+        },
+        {
+          "command": "/gubind <玩家>",
+          "title": "绑定 g0v0",
+          "description": "绑定 g0v0（咕哦服）账号；查询时在指令末尾加 &gu。",
+          "example": "/gubind 玩家名"
+        },
+        {
+          "command": "/guunbind",
+          "title": "解绑 g0v0",
+          "description": "解除 g0v0 私服账号绑定。",
+          "example": "/guunbind"
         }
       ]
     },
     {
-      "id": "charts",
-      "title": "歌曲与谱面",
-      "subtitle": "找歌、推荐与谱面分析，发现下一首。",
-      "symbol": "▥",
+      "id": "platina",
+      "title": "PLATiNA 白金",
+      "subtitle": "B50、歌曲、成绩与别名。",
+      "symbol": "◎",
       "commands": [
         {
-          "command": "/plsong [模式] 歌曲名",
-          "title": "歌曲查询",
-          "description": "查找歌曲信息。",
-          "example": "/plsong 歌曲名"
+          "command": "/plb50 [模式]",
+          "title": "白金 B50",
+          "description": "查询 B50；可用 4k、4k+、6k、6k+，也可加“理论值”。",
+          "example": "/plb50 4k"
+        },
+        {
+          "command": "/plswitch [1/2]",
+          "title": "切换图片样式",
+          "description": "切换白金 B50 与歌曲查询的图片样式。",
+          "example": "/plswitch 1"
+        },
+        {
+          "command": "/plsong [模式] <歌名>",
+          "title": "查歌曲",
+          "description": "按曲名、别名或数字 ID 查询歌曲，也支持拼写猜测。",
+          "example": "/plsong 4 aether"
+        },
+        {
+          "command": "/plinfo <歌名> <难度> <模式>",
+          "title": "单曲成绩",
+          "description": "查询指定白金歌曲谱面的个人成绩，需要先绑定。",
+          "example": "/plinfo Cyclopes OVER 4k"
         },
         {
           "command": "/plrandom [模式] [分类]",
           "title": "随机歌曲",
-          "description": "不知道打什么？随机挑选一首歌曲。",
-          "example": "/plrandom"
+          "description": "按模式或曲库分类随机抽歌。",
+          "example": "/plrandom 6k+"
         },
         {
-          "command": "/plrec",
-          "title": "白金推荐",
-          "description": "获取白金推荐。",
-          "example": "/plrec"
+          "command": "/plrate [分数]",
+          "title": "段位门槛",
+          "description": "查看 P.A.T.C.H. 段位门槛，或查询分数落在哪一段。",
+          "example": "/plrate 30000"
         },
+        {
+          "command": "/plscore [模式] [筛选]",
+          "title": "成绩列表",
+          "description": "按模式、AP/FC、评价、准确率或等级筛选个人成绩。",
+          "example": "/plscore 4k AP LV15"
+        },
+        {
+          "command": "/plcalc <等级> <准确率>",
+          "title": "P.A.T.C.H. 计算",
+          "description": "按等级和准确率计算 P.A.T.C.H.。",
+          "example": "/plcalc 15 99.5"
+        },
+        {
+          "command": "/plrec [模式]",
+          "title": "上分推荐",
+          "description": "按模式推荐适合提升成绩的歌曲。",
+          "example": "/plrec 4k"
+        },
+        {
+          "command": "/plalias <歌曲>",
+          "title": "歌曲别名",
+          "description": "查看歌曲已有的别名。",
+          "example": "/plalias aether"
+        },
+        {
+          "command": "/plvote <歌曲> <别名>",
+          "title": "别名投票",
+          "description": "发起或附议别名投票；累计 3 位不同用户后自动通过。",
+          "example": "/plvote aether 以太"
+        },
+        {
+          "command": "/白金同意别名",
+          "title": "审核别名",
+          "description": "供别名管理员审核待处理别名；普通用户没有审核权限。",
+          "example": "/白金同意别名"
+        }
+      ]
+    },
+    {
+      "id": "osu-scores",
+      "title": "osu! 成绩",
+      "subtitle": "个人资料、最佳成绩与历史记录。",
+      "symbol": "◉",
+      "commands": [
+        {
+          "command": "/info [玩家]:[模式]",
+          "title": "玩家资料",
+          "description": "查看 osu! 玩家资料与表现分。",
+          "example": "/info peppy:m"
+        },
+        {
+          "command": "/mu",
+          "title": "个人主页",
+          "description": "获取已绑定 osu! 玩家的主页。",
+          "example": "/mu"
+        },
+        {
+          "command": "/update",
+          "title": "刷新资料",
+          "description": "刷新已绑定玩家的信息缓存。",
+          "example": "/update"
+        },
+        {
+          "command": "/bp [序号]",
+          "title": "单条最佳成绩",
+          "description": "查看指定序号的 BP；可加玩家、模式与 Mods。",
+          "example": "/bp 5:m"
+        },
+        {
+          "command": "/bl [范围]",
+          "title": "BP 列表",
+          "description": "查看最佳成绩列表；可用范围和 pp、acc、星数等筛选条件。",
+          "example": "/bl 1-30"
+        },
+        {
+          "command": "/first [范围]",
+          "title": "第一名成绩",
+          "description": "查看玩家在谱面排行榜上的第一名成绩。",
+          "example": "/first 1-20"
+        },
+        {
+          "command": "/re [序号]",
+          "title": "最近游玩",
+          "description": "查看最近一条游玩成绩，包含未通过。",
+          "example": "/re"
+        },
+        {
+          "command": "/rl [范围]",
+          "title": "最近游玩列表",
+          "description": "查看最近游玩成绩列表，包含未通过。",
+          "example": "/rl 1-30"
+        },
+        {
+          "command": "/pr [序号]",
+          "title": "最近通过",
+          "description": "查看最近一条通过的成绩。",
+          "example": "/pr"
+        },
+        {
+          "command": "/prlist [范围]",
+          "title": "最近通过列表",
+          "description": "查看最近通过的成绩列表；/pl 入口已停用。",
+          "example": "/prlist 1-30"
+        },
+        {
+          "command": "/sc [谱面ID]",
+          "title": "指定谱面成绩",
+          "description": "查看玩家在某张谱面上的成绩；先查过谱面时可省略 ID。",
+          "example": "/sc 4094064"
+        },
+        {
+          "command": "/sl [谱面ID] [范围]",
+          "title": "谱面成绩列表",
+          "description": "查看这张谱面不同 Mods 组合的历史最佳成绩。",
+          "example": "/sl 4094064 1-30"
+        },
+        {
+          "command": "/nb [#天数]",
+          "title": "最近新增 BP",
+          "description": "查看最近新增的 BP 成绩。",
+          "example": "/nb #7"
+        },
+        {
+          "command": "/bpa",
+          "title": "BP 分析",
+          "description": "分析最佳成绩的分布与提升空间。",
+          "example": "/bpa"
+        },
+        {
+          "command": "/hs [#天数]",
+          "title": "PP 与排名历史",
+          "description": "查看 PP 和排名随时间的变化。",
+          "example": "/hs #30"
+        },
+        {
+          "command": "/fix [玩家]:[模式]",
+          "title": "理论 FC",
+          "description": "估算 BP 中小掉连成绩全连后的总 PP 与排名。",
+          "example": "/fix:m"
+        }
+      ]
+    },
+    {
+      "id": "osu-maps",
+      "title": "osu! 谱面",
+      "subtitle": "查谱、试听、预览与转换。",
+      "symbol": "▥",
+      "commands": [
+        {
+          "command": "/m [谱面ID]",
+          "title": "单张谱面",
+          "description": "查看谱面难度信息；还可附 Mods 或假设准确率来估算 PP。",
+          "example": "/m 4094064"
+        },
+        {
+          "command": "/bmap [谱面集ID]",
+          "title": "谱面集",
+          "description": "查看 osu! 谱面集信息。",
+          "example": "/bmap 123456"
+        },
+        {
+          "command": "/bg [谱面ID]",
+          "title": "谱面背景",
+          "description": "获取指定谱面的背景图片。",
+          "example": "/bg 4094064"
+        },
+        {
+          "command": "/au [谱面ID]",
+          "title": "谱面试听",
+          "description": "发送谱面或谱面集的试听音频。",
+          "example": "/au 4094064"
+        },
+        {
+          "command": "/预览 [谱面ID]",
+          "title": "谱面预览",
+          "description": "生成谱面预览；加 +gif 可生成约 10 秒的动态预览。",
+          "example": "/预览 4094064 +gif"
+        },
+        {
+          "command": "/完整预览 [谱面ID]",
+          "title": "完整预览",
+          "description": "生成完整谱面预览图片；视频请用 /vp。",
+          "example": "/完整预览 4094064"
+        },
+        {
+          "command": "/vp [谱面ID]",
+          "title": "视频预览",
+          "description": "生成完整谱面视频，长谱面需要等待。",
+          "example": "/vp 4094064"
+        },
+        {
+          "command": "/dl [谱面集ID]",
+          "title": "下载谱面集",
+          "description": "下载指定 osu! 谱面集。",
+          "example": "/dl 123456"
+        },
+        {
+          "command": "/convert --map <ID> [选项]",
+          "title": "mania 谱面转换",
+          "description": "通过 --rate、--fln、--od 等选项转换谱面；/convert --help 查看参数。",
+          "example": "/convert --map 4094064 --rate 1.2"
+        },
+        {
+          "command": "/倍速 <谱面ID> <速率>",
+          "title": "谱面倍速",
+          "description": "生成指定倍率的 mania 谱面。",
+          "example": "/倍速 4094064 1.2"
+        },
+        {
+          "command": "/反键 <谱面ID>",
+          "title": "反键谱面",
+          "description": "生成反键版本的 mania 谱面。",
+          "example": "/反键 4094064"
+        }
+      ]
+    },
+    {
+      "id": "osu-social",
+      "title": "osu! 社交与趣味",
+      "subtitle": "排行、好友、多人房与猜歌。",
+      "symbol": "♫",
+      "commands": [
+        {
+          "command": "/rank",
+          "title": "群内排名",
+          "description": "查看当前群已绑定玩家的 PP 排名；仅群聊可用。",
+          "example": "/rank"
+        },
+        {
+          "command": "/推荐",
+          "title": "谱面推荐",
+          "description": "根据成绩推荐 osu! 谱面。",
+          "example": "/推荐"
+        },
+        {
+          "command": "/friend [范围或玩家]",
+          "title": "好友与互关",
+          "description": "查看好友列表或与某玩家的互关状态；首次使用需授权。",
+          "example": "/friend 1-30"
+        },
+        {
+          "command": "/mp <对局ID>",
+          "title": "多人对局",
+          "description": "查看 osu! 多人房历史。",
+          "example": "/mp 123456"
+        },
+        {
+          "command": "/rt <对局ID>",
+          "title": "多人评分",
+          "description": "计算多人房对局表现评分。",
+          "example": "/rt 123456"
+        },
+        {
+          "command": "/medal <成就名>",
+          "title": "成就攻略",
+          "description": "查看指定 osu! 成就的获得方式。",
+          "example": "/medal 成就名"
+        },
+        {
+          "command": "/myach [模式]",
+          "title": "我的成就",
+          "description": "查看已获得的 osu! 成就。",
+          "example": "/myach m"
+        },
+        {
+          "command": "/achrec [模式]",
+          "title": "成就推荐",
+          "description": "推荐尚未获得的 osu! 成就。",
+          "example": "/achrec m"
+        },
+        {
+          "command": "/音频猜歌",
+          "title": "音频猜歌",
+          "description": "开始音频猜歌游戏；进行中可发 /音频提示。",
+          "example": "/音频猜歌"
+        },
+        {
+          "command": "/音频提示",
+          "title": "音频猜歌提示",
+          "description": "音频猜歌进行中获取提示。",
+          "example": "/音频提示"
+        },
+        {
+          "command": "/图片猜歌",
+          "title": "图片猜歌",
+          "description": "开始图片猜歌游戏；进行中可发 /图片提示。",
+          "example": "/图片猜歌"
+        },
+        {
+          "command": "/图片提示",
+          "title": "图片猜歌提示",
+          "description": "图片猜歌进行中获取提示。",
+          "example": "/图片提示"
+        },
+        {
+          "command": "/谱面猜歌",
+          "title": "谱面猜歌",
+          "description": "开始谱面猜歌游戏；进行中可发 /谱面提示。",
+          "example": "/谱面猜歌"
+        },
+        {
+          "command": "/谱面提示",
+          "title": "谱面猜歌提示",
+          "description": "谱面猜歌进行中获取提示。",
+          "example": "/谱面提示"
+        }
+      ]
+    },
+    {
+      "id": "mania-maps",
+      "title": "mania 谱面分析",
+      "subtitle": "键型、难度与皮肤图片。",
+      "symbol": "✧",
+      "commands": [
         {
           "command": "/rework b<谱面ID>",
           "title": "谱面分析",
-          "description": "分析键型和难度。也可以在同一条消息附上 .osu、.mc、.osz 或 .mcz 文件。",
-          "example": "/rework b123456"
+          "description": "分析 osu!mania 谱面的键型和难度；也支持同时附 .osu/.mc/.osz/.mcz 文件，别名 /mapview。",
+          "example": "/rework b4094064"
+        },
+        {
+          "command": "/pattern b<谱面ID>",
+          "title": "键型分析",
+          "description": "分析谱面键型；加 -d 可获取详细结果。",
+          "example": "/pattern b4094064"
+        },
+        {
+          "command": "/ett b<谱面ID> [倍速]",
+          "title": "Etterna MSD",
+          "description": "计算谱面的 MSD；别名 /msd。",
+          "example": "/ett b4094064 x1.25"
+        },
+        {
+          "command": "/percy [数值]",
+          "title": "LN 投皮工具",
+          "description": "识别或修改 LN 面身图片的投皮程度；同时附 PNG 文件。",
+          "example": "/percy 150"
+        }
+      ]
+    },
+    {
+      "id": "mania-replays",
+      "title": "mania 回放与计算",
+      "subtitle": "回放图表、分析和成绩换算。",
+      "symbol": "⌁",
+      "commands": [
+        {
+          "command": "/pressingtime",
+          "title": "按键时长",
+          "description": "分析 .osr/.mr 回放的按键时间。",
+          "example": "/pressingtime"
+        },
+        {
+          "command": "/analyze [b谱面ID]",
+          "title": "回放分析",
+          "description": "结合回放与谱面进行异常分析；结果仅供参考。",
+          "example": "/analyze b4094064"
+        },
+        {
+          "command": "/delta [b谱面ID]",
+          "title": "判定偏差",
+          "description": "查看回放打击时间与谱面时间的偏差分布。",
+          "example": "/delta b4094064"
+        },
+        {
+          "command": "/lifebar",
+          "title": "血条变化",
+          "description": "根据 .osr 回放绘制血条变化图。",
+          "example": "/lifebar"
+        },
+        {
+          "command": "/spectrum",
+          "title": "回放频谱",
+          "description": "查看 .osr/.mr 回放的打击频谱图。",
+          "example": "/spectrum"
+        },
+        {
+          "command": "/scatter [b谱面ID]",
+          "title": "判定散点",
+          "description": "查看回放打击位置的二维散点图。",
+          "example": "/scatter b4094064"
+        },
+        {
+          "command": "/acc [参数]",
+          "title": "单曲 ACC",
+          "description": "计算段位的单曲 ACC；不带参数可按提示交互输入。",
+          "example": "/acc"
+        },
+        {
+          "command": "/cvtscore [规则]",
+          "title": "成绩转换",
+          "description": "按目标 ruleset 重算回放成绩；需要回放与谱面文件。",
+          "example": "/cvtscore Quaver/chill sc diff4"
         }
       ]
     },
     {
       "id": "image",
       "title": "图片处理",
-      "subtitle": "希腊字母、色散与故障效果。",
+      "subtitle": "给图片与 GIF 加一点新鲜感。",
       "symbol": "✳",
       "commands": [
         {
           "command": "/osugreek help",
-          "title": "素材帮助",
-          "description": "查看可用的希腊字母素材。",
+          "title": "希腊字母素材",
+          "description": "查看可用的希腊字母图片素材。",
           "example": "/osugreek help"
         },
         {
-          "command": "/osugreek alpha 4 1",
-          "title": "字母与故障效果",
-          "description": "在同一条消息附上图片或 GIF。两个数字分别为色散强度（1–20）和故障强度（0–5），可以省略。",
+          "command": "/osugreek <字母> [色散] [故障]",
+          "title": "字母与色散",
+          "description": "在同一条消息附图片或 GIF；色散为 1–20，故障为 0–5。",
           "example": "/osugreek alpha 4 1"
         }
       ]
     },
     {
-      "id": "tools",
-      "title": "实用工具",
-      "subtitle": "准确率计算与音游工具使用指南。",
-      "symbol": "✦",
+      "id": "management",
+      "title": "管理指令",
+      "subtitle": "以下操作需要相应管理权限。",
+      "symbol": "⚙",
       "commands": [
         {
-          "command": "/omtk",
-          "title": "工具箱帮助",
-          "description": "查看工具箱全部指令。输入 /omtk 命令名 可查看对应说明。",
-          "example": "/omtk"
+          "command": "/白金添加订阅 [群号]",
+          "title": "添加别名订阅群",
+          "description": "仅超级管理员可用；把当前群或指定群加入别名投票通知。",
+          "example": "/白金添加订阅"
         },
         {
-          "command": "/acc",
-          "title": "准确率计算",
-          "description": "发送指令后，按机器人提示继续输入。",
-          "example": "/acc"
+          "command": "/白金取消订阅 [群号]",
+          "title": "取消别名订阅",
+          "description": "仅超级管理员可用；移除别名投票通知群。",
+          "example": "/白金取消订阅"
+        },
+        {
+          "command": "/白金添加管理员 <用户>",
+          "title": "添加别名管理员",
+          "description": "仅超级管理员可用；允许指定用户审核别名。",
+          "example": "/白金添加管理员"
+        },
+        {
+          "command": "/白金取消管理员 <用户>",
+          "title": "取消别名管理员",
+          "description": "仅超级管理员可用；撤销别名管理权限。",
+          "example": "/白金取消管理员"
+        },
+        {
+          "command": "/白金订阅列表",
+          "title": "查看白金管理名单",
+          "description": "仅超级管理员可用；查看订阅群和管理员。",
+          "example": "/白金订阅列表"
+        },
+        {
+          "command": "/白金更新资源",
+          "title": "重载白金资源",
+          "description": "仅超级管理员可用；更新素材后无需重启机器人即可重载。",
+          "example": "/白金更新资源"
+        },
+        {
+          "command": "/白金保活 [列表/全部]",
+          "title": "检查账号保活",
+          "description": "仅超级管理员可用；查看绑定状态或手动运行一轮保活。",
+          "example": "/白金保活 列表"
         }
       ]
     }
