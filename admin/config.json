@@ -1,0 +1,147 @@
+{
+  "locale": "zh_Hans",
+  "media_folder": "assets/uploads",
+  "public_folder": "../assets/uploads",
+  "collections": [
+    {
+      "name": "content",
+      "label": "网站内容",
+      "files": [
+        {
+          "name": "site",
+          "label": "首页介绍",
+          "file": "content/site.json",
+          "fields": [
+            {
+              "name": "name",
+              "label": "机器人名称",
+              "widget": "string"
+            },
+            {
+              "name": "tagline",
+              "label": "一句话介绍",
+              "widget": "string"
+            },
+            {
+              "name": "description",
+              "label": "详细介绍",
+              "widget": "text"
+            },
+            {
+              "name": "notice",
+              "label": "使用提示",
+              "widget": "text"
+            }
+          ]
+        },
+        {
+          "name": "help",
+          "label": "指令帮助",
+          "file": "content/help.json",
+          "fields": [
+            {
+              "name": "groups",
+              "label": "功能分类",
+              "widget": "list",
+              "summary": "{{fields.title}}",
+              "fields": [
+                {
+                  "name": "id",
+                  "label": "分类标识",
+                  "widget": "string",
+                  "hint": "唯一的小写英文、数字或横线，例如 platina",
+                  "pattern": [
+                    "^[a-z0-9-]+$",
+                    "请使用小写英文、数字或横线"
+                  ]
+                },
+                {
+                  "name": "title",
+                  "label": "分类名称",
+                  "widget": "string"
+                },
+                {
+                  "name": "subtitle",
+                  "label": "分类简介",
+                  "widget": "string"
+                },
+                {
+                  "name": "symbol",
+                  "label": "分类符号",
+                  "widget": "string"
+                },
+                {
+                  "name": "commands",
+                  "label": "指令",
+                  "widget": "list",
+                  "summary": "{{fields.title}}",
+                  "fields": [
+                    {
+                      "name": "command",
+                      "label": "指令格式",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "title",
+                      "label": "功能名称",
+                      "widget": "string"
+                    },
+                    {
+                      "name": "description",
+                      "label": "说明",
+                      "widget": "text"
+                    },
+                    {
+                      "name": "example",
+                      "label": "可复制示例",
+                      "widget": "string",
+                      "required": false
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "changelog",
+          "label": "更新日志",
+          "file": "content/changelog.json",
+          "fields": [
+            {
+              "name": "entries",
+              "label": "更新记录",
+              "widget": "list",
+              "summary": "{{fields.date}} · {{fields.title}}",
+              "fields": [
+                {
+                  "name": "version",
+                  "label": "版本",
+                  "widget": "string"
+                },
+                {
+                  "name": "date",
+                  "label": "日期",
+                  "widget": "datetime",
+                  "format": "YYYY-MM-DD",
+                  "date_format": "YYYY-MM-DD",
+                  "time_format": false
+                },
+                {
+                  "name": "title",
+                  "label": "标题",
+                  "widget": "string"
+                },
+                {
+                  "name": "body",
+                  "label": "更新内容",
+                  "widget": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
