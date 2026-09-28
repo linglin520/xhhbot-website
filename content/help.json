@@ -1,0 +1,120 @@
+{
+  "groups": [
+    {
+      "id": "scores",
+      "title": "成绩查询",
+      "subtitle": "查询白金与 osu! 成绩，记录每次进步。",
+      "symbol": "◎",
+      "commands": [
+        {
+          "command": "/plhelp",
+          "title": "白金帮助",
+          "description": "查看 PLATiNA 插件的完整指令说明。",
+          "example": "/plhelp"
+        },
+        {
+          "command": "/plbind <token>",
+          "title": "绑定账号",
+          "description": "使用 PLATiNA token 绑定游戏账号。建议私聊发送；群聊绑定后请手动撤回含 token 的消息。",
+          "example": "/plbind 你的token"
+        },
+        {
+          "command": "/plb50 [模式]",
+          "title": "我的 B50",
+          "description": "查询 B50 成绩。模式可选 4k、4k+、6k、6k+，也可以省略。",
+          "example": "/plb50 4k"
+        },
+        {
+          "command": "/osuhelp",
+          "title": "查分帮助",
+          "description": "查看 OSUBot 的绑定方法和完整查分指令。",
+          "example": "/osuhelp"
+        },
+        {
+          "command": "/pr",
+          "title": "最近通过",
+          "description": "查看最近通过的成绩，也支持查询最近通过的成绩列表。",
+          "example": "/pr 1-30"
+        },
+        {
+          "command": "/bp [范围]",
+          "title": "最佳成绩",
+          "description": "查看最佳成绩，可指定 1–100 范围。",
+          "example": "/bp 1-100"
+        }
+      ]
+    },
+    {
+      "id": "charts",
+      "title": "歌曲与谱面",
+      "subtitle": "找歌、推荐与谱面分析，发现下一首。",
+      "symbol": "▥",
+      "commands": [
+        {
+          "command": "/plsong [模式] 歌曲名",
+          "title": "歌曲查询",
+          "description": "查找歌曲信息。",
+          "example": "/plsong 歌曲名"
+        },
+        {
+          "command": "/plrandom [模式] [分类]",
+          "title": "随机歌曲",
+          "description": "不知道打什么？随机挑选一首歌曲。",
+          "example": "/plrandom"
+        },
+        {
+          "command": "/plrec",
+          "title": "白金推荐",
+          "description": "获取白金推荐。",
+          "example": "/plrec"
+        },
+        {
+          "command": "/mapview b<谱面ID>",
+          "title": "谱面分析",
+          "description": "分析键型和难度。也可以在同一条消息附上 .osu、.mc、.osz 或 .mcz 文件。",
+          "example": "/mapview b123456"
+        }
+      ]
+    },
+    {
+      "id": "image",
+      "title": "图片处理",
+      "subtitle": "希腊字母、色散与故障效果。",
+      "symbol": "✳",
+      "commands": [
+        {
+          "command": "/osugreek help",
+          "title": "素材帮助",
+          "description": "查看可用的希腊字母素材。",
+          "example": "/osugreek help"
+        },
+        {
+          "command": "/osugreek alpha 4 1",
+          "title": "字母与故障效果",
+          "description": "在同一条消息附上图片或 GIF。两个数字分别为色散强度（1–20）和故障强度（0–5），可以省略。",
+          "example": "/osugreek alpha 4 1"
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "实用工具",
+      "subtitle": "准确率计算与音游工具使用指南。",
+      "symbol": "✦",
+      "commands": [
+        {
+          "command": "/omtk",
+          "title": "工具箱帮助",
+          "description": "查看工具箱全部指令。输入 /omtk 命令名 可查看对应说明。",
+          "example": "/omtk"
+        },
+        {
+          "command": "/acc",
+          "title": "准确率计算",
+          "description": "发送指令后，按机器人提示继续输入。",
+          "example": "/acc"
+        }
+      ]
+    }
+  ]
+}
