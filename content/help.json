@@ -151,12 +151,6 @@
           "title": "别名投票",
           "description": "发起或附议别名投票；累计 3 位不同用户后自动通过。",
           "example": "/plvote aether 以太"
-        },
-        {
-          "command": "/白金同意别名",
-          "title": "审核别名",
-          "description": "供别名管理员审核待处理别名；普通用户没有审核权限。",
-          "example": "/白金同意别名"
         }
       ]
     },
@@ -535,56 +529,6 @@
           "title": "字母与色散",
           "description": "在同一条消息附图片或 GIF；色散为 1–20，故障为 0–5。",
           "example": "/osugreek alpha 4 1"
-        }
-      ]
-    },
-    {
-      "id": "management",
-      "title": "管理指令",
-      "subtitle": "以下操作需要相应管理权限。",
-      "symbol": "⚙",
-      "commands": [
-        {
-          "command": "/白金添加订阅 [群号]",
-          "title": "添加别名订阅群",
-          "description": "仅超级管理员可用；把当前群或指定群加入别名投票通知。",
-          "example": "/白金添加订阅"
-        },
-        {
-          "command": "/白金取消订阅 [群号]",
-          "title": "取消别名订阅",
-          "description": "仅超级管理员可用；移除别名投票通知群。",
-          "example": "/白金取消订阅"
-        },
-        {
-          "command": "/白金添加管理员 <用户>",
-          "title": "添加别名管理员",
-          "description": "仅超级管理员可用；允许指定用户审核别名。",
-          "example": "/白金添加管理员"
-        },
-        {
-          "command": "/白金取消管理员 <用户>",
-          "title": "取消别名管理员",
-          "description": "仅超级管理员可用；撤销别名管理权限。",
-          "example": "/白金取消管理员"
-        },
-        {
-          "command": "/白金订阅列表",
-          "title": "查看白金管理名单",
-          "description": "仅超级管理员可用；查看订阅群和管理员。",
-          "example": "/白金订阅列表"
-        },
-        {
-          "command": "/白金更新资源",
-          "title": "重载白金资源",
-          "description": "仅超级管理员可用；更新素材后无需重启机器人即可重载。",
-          "example": "/白金更新资源"
-        },
-        {
-          "command": "/白金保活 [列表/全部]",
-          "title": "检查账号保活",
-          "description": "仅超级管理员可用；查看绑定状态或手动运行一轮保活。",
-          "example": "/白金保活 列表"
         }
       ]
     }
