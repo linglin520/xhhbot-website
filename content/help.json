@@ -69,10 +69,10 @@
           "example": "/plrec"
         },
         {
-          "command": "/mapview b<谱面ID>",
+          "command": "/rewok b<谱面ID>",
           "title": "谱面分析",
           "description": "分析键型和难度。也可以在同一条消息附上 .osu、.mc、.osz 或 .mcz 文件。",
-          "example": "/mapview b123456"
+          "example": "/rework b123456"
         }
       ]
     },
