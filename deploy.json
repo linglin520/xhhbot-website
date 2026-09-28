@@ -2,5 +2,5 @@
   "repository": "linglin520/xhhbot-website",
   "branch": "main",
   "domain": "xhhbot.com",
-  "oauth_base_url": ""
+  "oauth_base_url": "https://xhhbot-auth.1843977402.workers.dev"
 }
