@@ -107,7 +107,7 @@
         {
           "command": "/plinfo <歌名> <难度> <模式>",
           "title": "单曲成绩",
-          "description": "查询指定白金歌曲谱面的个人成绩，需要先绑定。",
+          "description": "查询指定白金谱面的个人成绩，需要先绑定；加号模式支持 PLUS，按提示在 60 秒内回复谱面序号。",
           "example": "/plinfo Cyclopes OVER 4k"
         },
         {
@@ -335,7 +335,7 @@
     {
       "id": "osu-social",
       "title": "osu! 社交与趣味",
-      "subtitle": "排行、好友、多人房与猜歌。",
+      "subtitle": "群内排行、好友互关、多人房与成就。",
       "symbol": "♫",
       "commands": [
         {
@@ -385,6 +385,56 @@
           "title": "成就推荐",
           "description": "推荐尚未获得的 osu! 成就。",
           "example": "/achrec m"
+        }
+      ]
+    },
+    {
+      "id": "guessing-games",
+      "title": "猜歌游戏",
+      "subtitle": "听白金与 DJMAX 片段，挑战 osu! 猜歌。",
+      "symbol": "♫",
+      "commands": [
+        {
+          "command": "/plguess",
+          "title": "白金猜歌",
+          "description": "开始白金档案猜歌，播放随机 10 秒试听；每局 3 分钟，直接发送曲名或部分曲名作答。群内请先 @机器人开局。",
+          "example": "/plguess"
+        },
+        {
+          "command": "/plhint",
+          "title": "白金猜歌提示",
+          "description": "白金猜歌进行中获取下一档提示：曲师、局部曲绘、试听、谱面难度与物量或曲名首字；提示用尽后会揭晓答案。",
+          "example": "/plhint"
+        },
+        {
+          "command": "/plgiveup",
+          "title": "结束白金猜歌",
+          "description": "结束当前白金猜歌并公布答案。",
+          "example": "/plgiveup"
+        },
+        {
+          "command": "/djmax猜歌 [曲包]",
+          "title": "DJMAX 猜歌",
+          "description": "仅群聊：@机器人开启 DJMAX 猜歌，可加曲包名称或代号筛选。听随机 10 秒片段后直接发歌名作答，无需 @；每群同时一题，默认最多 3 分钟。",
+          "example": "/djmax猜歌 V EXTENSION"
+        },
+        {
+          "command": "/djmax提示",
+          "title": "DJMAX 猜歌提示",
+          "description": "@机器人获取一种提示，文字提示与局部曲绘交替显示。开局后默认 30 秒自动提示文字、60 秒提示局部曲绘。",
+          "example": "/djmax提示"
+        },
+        {
+          "command": "/djmax结束",
+          "title": "结束 DJMAX 猜歌",
+          "description": "@机器人结束本题，公布曲名和完整曲绘；答对或超时也会公布答案。",
+          "example": "/djmax结束"
+        },
+        {
+          "command": "/djmax帮助",
+          "title": "DJMAX 猜歌帮助",
+          "description": "在群内 @机器人查看 DJMAX 猜歌指令与作答方式。歌曲别名也可作答，忽略大小写、空格和标点差异。",
+          "example": "/djmax帮助"
         },
         {
           "command": "/音频猜歌",
