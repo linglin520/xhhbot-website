@@ -123,10 +123,10 @@
           "example": "/plrate 30000"
         },
         {
-          "command": "/plscore [模式] [筛选]",
+          "command": "/plscore [模式] [曲包/筛选] [页码]",
           "title": "成绩列表",
-          "description": "按模式、AP/FC、评价、准确率或等级筛选个人成绩。",
-          "example": "/plscore 4k AP LV15"
+          "description": "按曲包、AP/FC、评价、准确率或等级筛选个人成绩，多个条件同时满足；每页 100 条，按等级从高到低显示。曲包可直接写名称或写“曲包 名称”，支持 platina、aquablue、sweeties（SWEETIE;S）、entertain、sasakure、zundamon、flagship，忽略大小写；例如 /plscore 4k aquablue，组合筛选可用下方示例。",
+          "example": "/plscore 4k 曲包 aquablue FC LV15 2"
         },
         {
           "command": "/plcalc <等级> <准确率>",
@@ -137,7 +137,7 @@
         {
           "command": "/plrec [模式]",
           "title": "上分推荐",
-          "description": "按模式推荐适合提升成绩的歌曲。",
+          "description": "按模式推荐适合提升成绩的歌曲，PLATiNA、OTHER 两栏分别按歌曲等级从高到低排列。",
           "example": "/plrec 4k"
         },
         {
@@ -391,7 +391,7 @@
     {
       "id": "guessing-games",
       "title": "猜歌游戏",
-      "subtitle": "听白金与 DJMAX 片段，挑战 osu! 猜歌。",
+      "subtitle": "白金、DJMAX 音频与曲绘猜歌，还有 osu! 猜歌。",
       "symbol": "♫",
       "commands": [
         {
@@ -415,25 +415,43 @@
         {
           "command": "/djmax猜歌 [曲包]",
           "title": "DJMAX 猜歌",
-          "description": "仅群聊：@机器人开启 DJMAX 猜歌，可加曲包名称或代号筛选。听随机 10 秒片段后直接发歌名作答，无需 @；每群同时一题，默认最多 3 分钟。",
-          "example": "/djmax猜歌 V EXTENSION"
+          "description": "群内 @机器人开局，播放随机 10 秒试听，最长 3 分钟；任何群成员直接发歌名、部分歌名或别名作答，无需 @。可用曲包名称或代号限定范围，优先避开最近 8 题。",
+          "example": "/djmax猜歌 NEXON"
+        },
+        {
+          "command": "/djmax曲绘 [曲包]",
+          "title": "DJMAX 纯曲绘猜歌",
+          "description": "群内 @机器人开始纯曲绘猜歌，先看模糊整图，提示逐步变清晰；最长 3 分钟，任何群成员直接发歌名作答。支持限定曲包，沿用 djmax提示 和 djmax结束。",
+          "example": "/djmax曲绘 P1"
         },
         {
           "command": "/djmax提示",
           "title": "DJMAX 猜歌提示",
-          "description": "@机器人获取一种提示，文字提示与局部曲绘交替显示。开局后默认 30 秒自动提示文字、60 秒提示局部曲绘。",
+          "description": "两种猜歌都可用：@机器人每次获取一种提示，曲包文字与逐渐清晰的曲绘交替发送。开局 30 秒自动提示曲包，60 秒发下一档曲绘；提示不延长时间。",
           "example": "/djmax提示"
+        },
+        {
+          "command": "/djmax重播",
+          "title": "DJMAX 重播换片段",
+          "description": "仅音频猜歌：@机器人换一段同曲 10 秒试听；每题默认最多 2 次，开局与重播请求之间至少间隔 15 秒，保持原截止时间。",
+          "example": "/djmax重播"
         },
         {
           "command": "/djmax结束",
           "title": "结束 DJMAX 猜歌",
-          "description": "@机器人结束本题，公布曲名和完整曲绘；答对或超时也会公布答案。",
+          "description": "两种猜歌都可用：@机器人结束本题，在同一条消息公布答案和清晰完整曲绘；答对或超时也会这样揭晓。",
           "example": "/djmax结束"
+        },
+        {
+          "command": "/djmax曲包",
+          "title": "DJMAX 曲包列表",
+          "description": "群内 @机器人查看曲包名称、代号与歌曲数量；用「djmax猜歌 NEXON」或「djmax曲绘 P1」限定范围，不填曲包则从全曲库出题。",
+          "example": "/djmax曲包"
         },
         {
           "command": "/djmax帮助",
           "title": "DJMAX 猜歌帮助",
-          "description": "在群内 @机器人查看 DJMAX 猜歌指令与作答方式。歌曲别名也可作答，忽略大小写、空格和标点差异。",
+          "description": "群内 @机器人查看 DJMAX 指令与作答规则；英文、韩文及别名均可作答，覆盖至少一半的片段也算正确，长歌名支持单词片段。",
           "example": "/djmax帮助"
         },
         {
