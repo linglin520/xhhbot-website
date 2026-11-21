@@ -147,10 +147,40 @@
           "example": "/dj 进度 SC12"
         },
         {
+          "command": "/dj 曲包",
+          "title": "曲包目录",
+          "description": "按发售顺序看包名和收录首数，每页 15 个。",
+          "example": "/dj 曲包 2"
+        },
+        {
+          "command": "/dj 曲包 <包名>",
+          "title": "包内选歌",
+          "description": "看包内曲目，发 /dj 序号 查谱面。",
+          "example": "/dj 曲包 RESPECT"
+        },
+        {
+          "command": "/dj 别名 <曲名>",
+          "title": "歌曲别名",
+          "description": "查看已收录的别名，也可以用别名查找。",
+          "example": "/dj 别名 神威"
+        },
+        {
+          "command": "/dj 门槛",
+          "title": "B100 入榜线",
+          "description": "查看当前键位的 B70 和 N30 门槛，可指定键位。",
+          "example": "/dj 门槛 4b"
+        },
+        {
+          "command": "/dj 成绩 PP / MC",
+          "title": "个人达成",
+          "description": "按 DJP 从高到低查看 PERFECT PLAY 或 MAX COMBO。",
+          "example": "/dj 成绩 MC"
+        },
+        {
           "command": "/dj 帮助",
           "title": "指令目录",
-          "description": "查看 DJMAX 查分指令。",
-          "example": "/dj 帮助"
+          "description": "查看查歌选曲和个人成绩两页帮助图。",
+          "example": "/dj 帮助 2"
         }
       ]
     },
