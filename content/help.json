@@ -149,14 +149,14 @@
         {
           "command": "/dj 曲包",
           "title": "曲包目录",
-          "description": "按发售顺序看包名和收录首数，每页 15 个。",
-          "example": "/dj 曲包 2"
+          "description": "一张图查看全部曲包的编号、名称和歌曲数。",
+          "example": "/dj 曲包"
         },
         {
-          "command": "/dj 曲包 <包名>",
+          "command": "/dj 曲包 <编号或包名>",
           "title": "包内选歌",
-          "description": "列出包内曲名。发 /dj 加完整曲名查看谱面。",
-          "example": "/dj 曲包 RESPECT"
+          "description": "查看包内歌曲。翻页可发 /dj 曲包 12 2页。",
+          "example": "/dj 曲包 12"
         },
         {
           "command": "/dj 别名 <曲名>",
@@ -171,10 +171,10 @@
           "example": "/dj 门槛 4b"
         },
         {
-          "command": "/dj 成绩 <曲包名>",
+          "command": "/dj 成绩 <编号或包名>",
           "title": "曲包成绩图",
           "description": "查看当前键位的包内成绩，按 DJP 从高到低排列。翻页可加 2页。",
-          "example": "/dj 成绩 RESPECT"
+          "example": "/dj 成绩 12"
         },
         {
           "command": "/dj 成绩 PP / MC",
