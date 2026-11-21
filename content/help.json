@@ -113,13 +113,13 @@
         {
           "command": "/dj 曲名",
           "title": "查歌",
-          "description": "按歌名或别名查曲。多个结果可发 /dj 选 4 查看第 4 首。",
+          "description": "按歌名或别名查曲。同名时可加作曲者，例如 /dj Alone · Nauts。",
           "example": "/dj 神威"
         },
         {
           "command": "神威是什么歌",
           "title": "识别别名",
-          "description": "直接用歌名或别名提问，看曲绘和当前键位的谱面等级。",
+          "description": "查看四个键位的星级、NOTE 数、BPM、时长和已收录的标签。",
           "example": "神威是什么歌"
         },
         {
@@ -155,7 +155,7 @@
         {
           "command": "/dj 曲包 <包名>",
           "title": "包内选歌",
-          "description": "看包内曲目，发 /dj 选 1 查第一首的谱面。",
+          "description": "列出包内曲名。发 /dj 加完整曲名查看谱面。",
           "example": "/dj 曲包 RESPECT"
         },
         {
@@ -169,6 +169,12 @@
           "title": "B100 入榜线",
           "description": "查看当前键位的 B70 和 N30 门槛，可指定键位。",
           "example": "/dj 门槛 4b"
+        },
+        {
+          "command": "/dj 成绩 <曲包名>",
+          "title": "曲包成绩图",
+          "description": "查看当前键位的包内成绩，按 DJP 从高到低排列。翻页可加 2页。",
+          "example": "/dj 成绩 RESPECT"
         },
         {
           "command": "/dj 成绩 PP / MC",
