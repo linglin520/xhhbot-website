@@ -95,7 +95,7 @@
         {
           "command": "/dj 绑定",
           "title": "绑定查分器",
-          "description": "登录授权成功后，机器人会回复原绑定消息。",
+          "description": "绑定后会收到回复。已绑定的玩家可再次授权，在成绩图上显示查分器头像。",
           "example": "/dj 绑定"
         },
         {
@@ -154,14 +154,14 @@
         },
         {
           "command": "/dj 曲包 <编号或包名>",
-          "title": "包内选歌",
-          "description": "查看包内歌曲。翻页可发 /dj 曲包 12 2页。",
-          "example": "/dj 曲包 12"
+          "title": "曲包歌单",
+          "description": "查看整包歌单。歌曲较多时，在曲包编号后加页码。",
+          "example": "/dj 曲包 42 2页"
         },
         {
           "command": "/dj 别名 <曲名>",
           "title": "歌曲别名",
-          "description": "查看已收录的别名，也可以用别名查找。",
+          "description": "用曲名或别名查看这首歌的曲绘和已收录别名。",
           "example": "/dj 别名 神威"
         },
         {
@@ -181,6 +181,12 @@
           "title": "个人达成",
           "description": "按 DJP 从高到低查看 PERFECT PLAY 或 MAX COMBO。",
           "example": "/dj 成绩 MC"
+        },
+        {
+          "command": "/dj 白、/dj 黑",
+          "title": "图片配色",
+          "description": "发 /dj 白 切换白色图片，发 /dj 黑 切回默认黑色。",
+          "example": "/dj 白"
         },
         {
           "command": "/dj 帮助",
